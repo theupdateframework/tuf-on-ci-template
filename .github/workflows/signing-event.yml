@@ -1,0 +1,20 @@
+name: Signing event
+
+permissions: {}
+
+on:
+  push:
+    branches:
+      - 'sign/**'
+
+jobs:
+  handle-signing-event:
+    name: Playground signing event
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+      pull-requests: write
+    steps:
+      - name: Signing event
+        uses: jku/repository-playground/playground/actions/signing-event@git-repo-impl
