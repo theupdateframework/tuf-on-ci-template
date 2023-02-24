@@ -27,8 +27,7 @@ jobs:
           service_account: git-repo-demo@python-tuf-kms.iam.gserviceaccount.com
 
       - id: snapshot
-        uses: jku/repository-playground/playground/actions/snapshot@git-repo-snapshot
-
+        uses: jku/repository-playground/playground/actions/snapshot@main
   deploy:
     permissions:
       pages: write
