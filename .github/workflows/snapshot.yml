@@ -20,8 +20,8 @@ jobs:
         uses: google-github-actions/auth@ef5d53e30bbcd8d0836f4288f5e50ff3e086997d
         with:
           token_format: access_token
-          workload_identity_provider: projects/843741030650/locations/global/workloadIdentityPools/git-repo-demo/providers/git-repo-demo
-          service_account: git-repo-demo@python-tuf-kms.iam.gserviceaccount.com
+          workload_identity_provider: YOUR_IDENTITY_PROVIDER_HERE
+          service_account: YOUR_SERVICE_ACCOUNT_HERE
 
       - id: snapshot
         uses: jku/repository-playground/playground/actions/snapshot@main
