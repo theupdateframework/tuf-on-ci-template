@@ -29,6 +29,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: 'write' # for committing to signing event branch
+      actions: 'write' # for dispatching signing event workflow
 
     steps:
       - name: Create signing events for offline version bumps
