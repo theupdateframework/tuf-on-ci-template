@@ -3,6 +3,7 @@ name: Signing event
 permissions: {}
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - 'sign/**'
