@@ -17,4 +17,4 @@ jobs:
       pull-requests: write
     steps:
       - name: Signing event
-        uses: jku/repository-playground/playground/actions/signing-event@git-repo-impl
+        uses: jku/repository-playground/playground/actions/signing-event@main
