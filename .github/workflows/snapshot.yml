@@ -12,20 +12,13 @@ jobs:
     runs-on: ubuntu-latest
 
     permissions:
-      id-token: 'write' # for OIDC needed for Google Cloud authentication
-      contents: 'write' # for commiting the snapshot/timestamp changes
+      id-token: 'write' # for OIDC identity access
+      contents: 'write' # for commiting snapshot/timestamp changes
 
     outputs:
       generated: ${{ steps.snapshot.outputs.generated }}
 
     steps:
-      - name: Authenticate to Google Cloud
-        uses: google-github-actions/auth@ef5d53e30bbcd8d0836f4288f5e50ff3e086997d
-        with:
-          token_format: access_token
-          workload_identity_provider: YOUR_IDENTITY_PROVIDER_HERE
-          service_account: YOUR_SERVICE_ACCOUNT_HERE
-
       - id: snapshot
         uses: jku/repository-playground/playground/actions/snapshot@main
 
