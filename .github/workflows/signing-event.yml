@@ -15,7 +15,6 @@ jobs:
     permissions:
       contents: read
       issues: write
-      pull-requests: write
     steps:
       - name: Signing event
         uses: jku/repository-playground/playground/actions/signing-event@main
