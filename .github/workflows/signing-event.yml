@@ -13,7 +13,7 @@ jobs:
     name: Playground signing event
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+      contents: write # for adding targets changes into the signing event branch
       issues: write
     steps:
       - name: Signing event
