@@ -24,6 +24,8 @@ jobs:
         with:
           gcp_workload_identity_provider: ${{ vars.GCP_WORKLOAD_IDENTITY_PROVIDER }}
           gcp_service_account: ${{ vars.GCP_SERVICE_ACCOUNT }}
+          metadata_path: metadata
+          targets_path: targets
 
   deploy:
     permissions:
