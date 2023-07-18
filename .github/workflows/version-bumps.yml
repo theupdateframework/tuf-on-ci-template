@@ -1,4 +1,4 @@
-name: Version bumps
+name: TUF-on-CI version bumps
 
 on:
   schedule:
@@ -17,7 +17,7 @@ jobs:
       generated: ${{ steps.online-bump.outputs.generated }}
     steps:
       - id: online-bump
-        uses: jku/repository-playground/playground/actions/online-version-bump@main
+        uses: theupdateframework/tuf-on-ci/actions/online-version-bump@main
         with:
           gcp_workload_identity_provider: ${{ vars.GCP_WORKLOAD_IDENTITY_PROVIDER }}
           gcp_service_account: ${{ vars.GCP_SERVICE_ACCOUNT }}
@@ -31,7 +31,7 @@ jobs:
       actions: 'write' # for dispatching signing event workflow
     steps:
       - name: Create signing events for offline version bumps
-        uses: jku/repository-playground/playground/actions/offline-version-bump@main
+        uses: theupdateframework/tuf-on-ci/actions/offline-version-bump@main
 
   deploy:
     permissions:
@@ -44,6 +44,6 @@ jobs:
     needs: online-version-bump
     if: needs.online-version-bump.outputs.generated == 'true'
     steps:
-      - name: Deploy Playground repository to GitHub Pages
+      - name: Deploy TUF-on-CI repository to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@0243b6c10d06cb8e95ed8ee471231877621202c0

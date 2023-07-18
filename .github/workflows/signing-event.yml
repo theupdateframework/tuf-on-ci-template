@@ -1,4 +1,4 @@
-name: Signing event
+name: TUF-on-CI signing event
 
 permissions: {}
 
@@ -10,11 +10,11 @@ on:
 
 jobs:
   handle-signing-event:
-    name: Playground signing event
+    name: TUF-on-CI signing event
     runs-on: ubuntu-latest
     permissions:
       contents: write # for adding targets changes into the signing event branch
       issues: write
     steps:
       - name: Signing event
-        uses: jku/repository-playground/playground/actions/signing-event@main
+        uses: theupdateframework/tuf-on-ci/actions/signing-event@main

@@ -1,4 +1,4 @@
-name: Playground repository snapshot
+name: TUF-on-CI snapshot
 
 permissions: {}
 
@@ -20,7 +20,7 @@ jobs:
 
     steps:
       - id: snapshot
-        uses: jku/repository-playground/playground/actions/snapshot@main
+        uses: theupdateframework/tuf-on-ci/actions/snapshot@main
         with:
           gcp_workload_identity_provider: ${{ vars.GCP_WORKLOAD_IDENTITY_PROVIDER }}
           gcp_service_account: ${{ vars.GCP_SERVICE_ACCOUNT }}
@@ -38,6 +38,6 @@ jobs:
     needs: snapshot
     if: needs.snapshot.outputs.generated == 'true'
     steps:
-      - name: Deploy Playground repository to GitHub Pages
+      - name: Deploy TUF-on-CI repository to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@0243b6c10d06cb8e95ed8ee471231877621202c0
