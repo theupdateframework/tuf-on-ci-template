@@ -16,6 +16,7 @@ jobs:
     permissions:
       id-token: 'write' # for OIDC identity access
       contents: 'write' # for commiting snapshot/timestamp changes
+      actions: 'write' # for dispatching publish workflow
 
     steps:
       - id: online-sign
