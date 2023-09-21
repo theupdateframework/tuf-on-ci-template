@@ -3,8 +3,6 @@ name: TUF-on-CI publish to GitHub Pages
 permissions: {}
 
 on:
-  push:
-    branches: [ publish ]
   workflow_dispatch:
 
 jobs:
