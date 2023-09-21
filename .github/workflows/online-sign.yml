@@ -1,0 +1,26 @@
+name: TUF-on-CI online signing
+
+permissions: {}
+
+on:
+  schedule:
+    - cron:  '17 1,7,13,19 * * *'    
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  online-sign:
+    runs-on: ubuntu-latest
+
+    permissions:
+      id-token: 'write' # for OIDC identity access
+      contents: 'write' # for commiting snapshot/timestamp changes
+
+    steps:
+      - id: online-sign
+        uses: theupdateframework/tuf-on-ci/actions/online-sign@moar-refactor
+        with:
+          force_publish: ${{ github.event_name != 'schedule' }}
+          gcp_workload_identity_provider: ${{ vars.GCP_WORKLOAD_IDENTITY_PROVIDER }}
+          gcp_service_account: ${{ vars.GCP_SERVICE_ACCOUNT }}
