@@ -1,4 +1,4 @@
-name: Create Signing events
+name: TUF-on-CI create Signing events
 
 on:
   schedule:
