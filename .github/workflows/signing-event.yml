@@ -5,8 +5,8 @@ permissions: {}
 on:
   workflow_dispatch:
   push:
-    branches:
-      - 'sign/**'
+    branches: ['sign/**']
+    paths: ['metadata/**', 'targets/**']
 
 jobs:
   handle-signing-event:
