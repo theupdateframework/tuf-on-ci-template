@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - id: build-and-upload-repository
-        uses: theupdateframework/tuf-on-ci/actions/upload-repository-artifacts@moar-refactor
+        uses: theupdateframework/tuf-on-ci/actions/upload-repository@moar-refactor
         with:
           gh_pages: true
 
