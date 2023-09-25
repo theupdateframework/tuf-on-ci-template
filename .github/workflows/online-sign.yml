@@ -23,6 +23,5 @@ jobs:
       - id: online-sign
         uses: theupdateframework/tuf-on-ci/actions/online-sign@moar-refactor
         with:
-          force_publish: ${{ github.event_name != 'schedule' }}
           gcp_workload_identity_provider: ${{ vars.GCP_WORKLOAD_IDENTITY_PROVIDER }}
           gcp_service_account: ${{ vars.GCP_SERVICE_ACCOUNT }}
