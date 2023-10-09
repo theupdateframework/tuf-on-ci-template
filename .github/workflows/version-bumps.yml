@@ -17,7 +17,7 @@ jobs:
       generated: ${{ steps.online-bump.outputs.generated }}
     steps:
       - id: online-bump
-        uses: theupdateframework/tuf-on-ci/actions/online-version-bump@08eeb6542172b7a9e86e210619d8909f410d6763 # v0.0.1
+        uses: theupdateframework/tuf-on-ci/actions/online-version-bump@6d32b9491bcccdf75b64f4c779f0366ad0e35b7e # v0.1.0
         with:
           gcp_workload_identity_provider: ${{ vars.GCP_WORKLOAD_IDENTITY_PROVIDER }}
           gcp_service_account: ${{ vars.GCP_SERVICE_ACCOUNT }}
@@ -31,7 +31,7 @@ jobs:
       actions: 'write' # for dispatching signing event workflow
     steps:
       - name: Create signing events for offline version bumps
-        uses: theupdateframework/tuf-on-ci/actions/offline-version-bump@08eeb6542172b7a9e86e210619d8909f410d6763 # v0.0.1
+        uses: theupdateframework/tuf-on-ci/actions/offline-version-bump@6d32b9491bcccdf75b64f4c779f0366ad0e35b7e # v0.1.0
 
   deploy:
     permissions:
