@@ -4,6 +4,10 @@ permissions: {}
 
 on:
   workflow_dispatch:
+    inputs:
+      ref:
+        type: string
+        required: false
 
 jobs:
   build:
@@ -15,6 +19,7 @@ jobs:
         uses: theupdateframework/tuf-on-ci/actions/upload-repository@3491682aa226e159ddab4011df8009468cbf0dea # v0.2.0
         with:
           gh_pages: true
+          ref: ${{ inputs.ref }}
 
   deploy:
     permissions:
