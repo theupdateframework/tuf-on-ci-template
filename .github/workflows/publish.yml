@@ -34,3 +34,22 @@ jobs:
       - name: Deploy TUF-on-CI repository to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@7a9bd943aa5e5175aeb8502edcc6c1c02d398e10 # v4.0.2
+
+  test:
+    needs: deploy
+    permissions:
+      issues: 'write' # for modifying Issues
+    uses: ./.github/workflows/test.yml
+
+  update-issue:
+    runs-on: ubuntu-latest
+    needs: [build, deploy, test]
+    if: always() && !cancelled()
+    permissions:
+      issues: 'write' # for modifying Issues
+    steps:
+      - name: Update the issue for the workflow
+        uses: jku/tuf-on-ci/actions/update-issue@issue-mgmt # FIXME repo & ref
+        with:
+          token: ${{ secrets.TUF_ON_CI_TOKEN || secrets.GITHUB_TOKEN }}
+          success: ${{ !contains(needs.*.result, 'failure') }}
