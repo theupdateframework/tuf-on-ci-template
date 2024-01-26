@@ -12,7 +12,7 @@ jobs:
   smoke-test:
     runs-on: ubuntu-latest
     steps:
-      - name: Smoke test repository with a client
+      - name: Smoke test TUF-on-CI repository with a TUF client
         uses: jku/tuf-on-ci/actions/test-repository@issue-mgmt # FIXME repo & ref
 
   update-issue:
