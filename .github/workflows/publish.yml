@@ -38,7 +38,7 @@ jobs:
   test-deployed-repository:
     needs: deploy-to-pages
     permissions:
-      issues: 'write' # for modifying Issues
+      issues: write # for modifying Issues
     uses: ./.github/workflows/test.yml
 
   update-issue:
@@ -46,7 +46,7 @@ jobs:
     needs: [build, deploy-to-pages, test-deployed-repository]
     if: always() && !cancelled()
     permissions:
-      issues: 'write' # for modifying Issues
+      issues: write # for modifying Issues
     steps:
       - name: Update the issue for the workflow
         uses: theupdateframework/tuf-on-ci/actions/update-issue@3a44844ab0dc6883849df4039f8494b6f7b5386c # v0.7.0
