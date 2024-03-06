@@ -11,6 +11,8 @@ permissions: {}
 jobs:
   smoke-test:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read # for checking out the repository
     steps:
       - name: Smoke test TUF-on-CI repository with a TUF client
         uses: theupdateframework/tuf-on-ci/actions/test-repository@3a44844ab0dc6883849df4039f8494b6f7b5386c # v0.7.0
