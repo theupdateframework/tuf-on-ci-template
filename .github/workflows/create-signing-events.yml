@@ -11,8 +11,8 @@ jobs:
   create-signing-events:
     runs-on: ubuntu-latest
     permissions:
-      contents: 'write' # for committing to signing event branch
-      actions: 'write' # for dispatching signing event workflow
+      contents: write # for committing to signing event branch
+      actions: write # for dispatching signing event workflow
     steps:
       - name: Create signing events for offline version bumps
         uses: theupdateframework/tuf-on-ci/actions/create-signing-events@3a44844ab0dc6883849df4039f8494b6f7b5386c # v0.7.0
@@ -24,7 +24,7 @@ jobs:
     needs: [create-signing-events]
     if: always() && !cancelled()
     permissions:
-      issues: 'write' # for modifying Issues
+      issues: write # for modifying Issues
     steps:
       - name: Update the issue for the workflow
         uses: theupdateframework/tuf-on-ci/actions/update-issue@3a44844ab0dc6883849df4039f8494b6f7b5386c # v0.7.0
