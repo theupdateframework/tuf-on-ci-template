@@ -38,6 +38,7 @@ jobs:
   test-deployed-repository:
     needs: deploy-to-pages
     permissions:
+      contents: read # for checking out the repository
       issues: write # for modifying Issues
     uses: ./.github/workflows/test.yml
 
