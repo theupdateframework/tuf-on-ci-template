@@ -25,6 +25,7 @@ jobs:
     if: always() && !cancelled()
     permissions:
       issues: write # for modifying Issues
+      contents: read # for checking out the repository
     steps:
       - name: Update the issue for the workflow
         uses: theupdateframework/tuf-on-ci/actions/update-issue@a486e2d6fcf93af4cb0f479e6a280f34125647d6 # v0.10.0
