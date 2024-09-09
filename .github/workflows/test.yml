@@ -5,6 +5,8 @@ on:
   workflow_dispatch:
   schedule:
     - cron: '17 4,10,16,22 * * *'
+  pull_request:
+    paths: ['.github/workflows/*']
 
 permissions: {}
 
