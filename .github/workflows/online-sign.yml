@@ -4,9 +4,9 @@ permissions: {}
 
 on:
   schedule:
-    - cron:  '17 1,7,13,19 * * *'
+    - cron: '17 1,7,13,19 * * *'
   push:
-    branches: [ main ]
+    branches: [main]
     paths: ['metadata/**', '!metadata/timestamp.json', '!metadata/snapshot.json']
   workflow_dispatch:
 
