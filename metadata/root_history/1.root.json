@@ -1,0 +1,67 @@
+{
+ "signatures": [
+  {
+   "keyid": "83d03c9dd5ce9020f6a42203e1723aa42cb8be06b74256213445a49b6e51b8ad",
+   "sig": ""
+  }
+ ],
+ "signed": {
+  "_type": "root",
+  "consistent_snapshot": true,
+  "expires": "2025-11-28T08:00:29Z",
+  "keys": {
+   "83d03c9dd5ce9020f6a42203e1723aa42cb8be06b74256213445a49b6e51b8ad": {
+    "keytype": "sigstore-oidc",
+    "keyval": {
+     "identity": "sorayaormazabal@gmail.com",
+     "issuer": "https://github.com/login/oauth"
+    },
+    "scheme": "Fulcio",
+    "x-tuf-on-ci-keyowner": "@sorayaormazabalmayo"
+   },
+   "d154c85c77a29e20d2721e5e0ddfb2b460aae7b114fee0e382889a6f8edc0c43": {
+    "keytype": "sigstore-oidc",
+    "keyval": {
+     "identity": "https://github.com/sorayaormazabalmayo/tuf-on-ci-template/.github/workflows/online-sign.yml@refs/heads/main",
+     "issuer": "https://token.actions.githubusercontent.com"
+    },
+    "scheme": "Fulcio",
+    "x-tuf-on-ci-online-uri": "sigstore:"
+   }
+  },
+  "roles": {
+   "root": {
+    "keyids": [
+     "83d03c9dd5ce9020f6a42203e1723aa42cb8be06b74256213445a49b6e51b8ad"
+    ],
+    "threshold": 1
+   },
+   "snapshot": {
+    "keyids": [
+     "d154c85c77a29e20d2721e5e0ddfb2b460aae7b114fee0e382889a6f8edc0c43"
+    ],
+    "threshold": 1,
+    "x-tuf-on-ci-expiry-period": 365,
+    "x-tuf-on-ci-signing-period": 60
+   },
+   "targets": {
+    "keyids": [
+     "83d03c9dd5ce9020f6a42203e1723aa42cb8be06b74256213445a49b6e51b8ad"
+    ],
+    "threshold": 1
+   },
+   "timestamp": {
+    "keyids": [
+     "d154c85c77a29e20d2721e5e0ddfb2b460aae7b114fee0e382889a6f8edc0c43"
+    ],
+    "threshold": 1,
+    "x-tuf-on-ci-expiry-period": 2,
+    "x-tuf-on-ci-signing-period": 1
+   }
+  },
+  "spec_version": "1.0.31",
+  "version": 1,
+  "x-tuf-on-ci-expiry-period": 365,
+  "x-tuf-on-ci-signing-period": 60
+ }
+}
