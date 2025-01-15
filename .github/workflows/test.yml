@@ -22,8 +22,8 @@ jobs:
   update-issue:
     runs-on: ubuntu-latest
     needs: [smoke-test]
-    # During workflow_call, caller updates issue
-    if: always() && !cancelled() && github.workflow == 'TUF-on-CI repository tests'
+    # During workflow_call, caller updates issue. During pull_request, issue updates are not needed
+    if: always() && !cancelled() && github.workflow == 'TUF-on-CI repository tests' && github.event_name != 'pull_request'
     permissions:
       issues: write # for modifying Issues
       contents: read # for checking out the repository
