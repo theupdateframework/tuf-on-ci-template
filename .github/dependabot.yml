@@ -4,4 +4,7 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
-      time: "10:35"
+    groups:
+      tuf-on-ci:
+        patterns:
+          - "theupdateframework/tuf-on-ci/actions/*"
